@@ -1,3 +1,4 @@
+//background Image & Author
 try {
     const res = await fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     const data = await res.json()
@@ -8,7 +9,7 @@ try {
 )`
     document.getElementById("author").textContent = `By: Dodi Achmad`
 }
-
+//Crypto
 try {
     const res = await fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
     if (!res.ok) {
@@ -27,13 +28,13 @@ try {
 } catch (err) {
     console.error(err)
 }
-
+//Time
 function getCurrentTime() {
     const date = new Date()
     document.getElementById("time").textContent = date.toLocaleTimeString("en-us", { timeStyle: "short" })
 }
 setInterval(getCurrentTime, 1000)
-
+//Weather
 navigator.geolocation.getCurrentPosition(async position => {
     try {
         const res = await fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
